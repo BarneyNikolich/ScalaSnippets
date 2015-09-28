@@ -1,0 +1,142 @@
+<html>
+	<head>				
+		<title> Scala Snippet Reference </title>
+
+
+<style> 
+body {
+    background-color: linen;
+}
+
+h1 {
+    color: maroon;
+    margin-left: 40px;
+} 
+ /*
+ pre {
+    white-space: pre-wrap;
+    background: hsl(30,80%,90%);
+}
+
+code { 
+    background: hsl(220, 80%, 90%); 
+} 
+*/
+</style>
+
+		
+	</head>
+
+<body>
+
+<h1> <center> This document contains snippets of Scala code for quick referencing.  </center> </h1>
+	<hr>
+
+<div class = "snippet"> 
+	<p>
+		<span id ="subTitle"> Using the Any type. Match statement handles Strings or Ints or Chars </span>
+
+ 		<pre><code>
+ 		def matchingScalaAnyType(something: Any): String = something match 
+ 		{
+    			case n: Int => "Number entered " + n
+    			case s: String => "String entered " + s
+    			case c: Char => "Char entered " + c  
+    			case _ => "Something else"
+  		}
+		</code> </pre>
+	</p>
+</div>
+
+
+<div class = "snippet"> 
+	<p>
+		<span id ="subTitle"> Read in name from console and print out. </span>
+		
+ 		<pre><code>
+		// Must import scala.io.StdIn_ because the readLine() method is deprecated.
+		import scala.io.StdIn._
+
+  		def inputName() 
+  		{
+    		print("Enter your name and press enter: ")
+    		val input = readLine();
+    		println("Hello " + input + ".")
+  		}
+		</code> </pre>
+	</p>
+</div>
+
+<div class = "snippet"> 
+	<p>
+		<span id ="subTitle">Simple ParseInt method with Exception Handling Try Catch- takes in String and converts to Int.</span>
+		
+ 		<pre><code>
+		 def parseInt(s: String): Int = try 
+		{
+    		s.toInt
+  		} catch {
+    		case e: NumberFormatException => -1
+  		}
+
+		def convertStringToInt() 
+		{
+   			println("Enter the String to convert: ")
+    		val input = readLine()
+   		 	println(parseInt(input))
+  		}
+		</code> </pre>
+	</p>
+</div>
+
+<div class = "snippet"> 
+	<p>
+		<span id ="subTitle">Example of Class</span>
+		
+ 		<pre><code>
+
+		class Point(xP: Int, yP: Int) 
+		{
+   		 //    Create local variables from the parameters
+  		 	var x: Int = xP
+  			var y: Int = yP
+
+   		 //    Define a method in the class
+   		 def move(dx: Int, dy: Int): Unit = 
+   		 {
+     		 x = x + dx
+    		 y = y + dy
+    	  	}
+
+   		 //Must override toString method as it is a default method.
+   		 override def toString(): String = "(" + x + ", " + y + ")"
+  		}
+
+  		//  Instantiate an instance of a class.
+  		val pt = new Point(5, 5)
+  		println(pt.toString())
+  		pt.move(10, 10)
+  		println(pt.toString())
+		</code> </pre>
+	</p>
+</div>
+
+<div class = "snippet"> 
+	<p>
+		<span id ="subTitle"> Using the Any type. Match statement handles Strings or Ints or Chars </span>
+		
+ 		<pre><code>
+
+
+
+		</code> </pre>
+	</p>
+</div>
+
+</body>
+
+</html>
+
+
+
+
