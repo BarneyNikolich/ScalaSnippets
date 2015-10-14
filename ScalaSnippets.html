@@ -12,7 +12,10 @@ h1 {
 } 
 
 code {
-    background-color: #ECECEC;
+   /*background-color: #ECECEC;*/
+    padding: .25em .5em;
+    /*font-size: 85%;*/
+    border-radius: 3px;
 }
 
 /* Auto sets the left and right margins horizontally center. The element will take up the width you specify, then the remaining space will be split evenly between the two margins.*/
@@ -32,21 +35,39 @@ body {
     line-height: 1.5em;
     color: #414152;
     font-family: Arial;
-    background-color: linen;
-
-    /**background-color: #ededed; */
+    /*background-color: linen;*/
+    background-color: #fff;
+ 
 }
 
- /*
- pre {
-    white-space: pre-wrap;
-    background: hsl(30,80%,90%);
+pre {
+
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: 15px;
+  line-height: 1.4;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #E1E1E2;
 }
 
-code { 
-    background: hsl(220, 80%, 90%); 
-} 
-*/
+.highlight .a {
+  color: #FF6600;
+}
+.highlight .b {
+  color: #5E8CD1;
+}
+.highlight .s {
+  color: #007A00;
+}
+.highlight .v {
+  color: #339966;
+}
+
 </style>
 
 		
@@ -60,16 +81,17 @@ code {
 <div class = "snippet" id = "elem"> 
 	<p>
 		<span id ="subTitle"> Using the Any type. Match statement handles Strings or Ints or Chars </span>
-
+    <div class = "highlight">
  		<pre><code>
- 		def matchingScalaAnyType(something: Any): String = something match 
- 		{
-    			case n: Int => "Number entered " + n
-    			case s: String => "String entered " + s
-    			case c: Char => "Char entered " + c  
-    			case _ => "Something else"
-  		}
+ 	<span class = "a">def </span>matchingScalaAnyType<span class="b">(something: Any):</span><span class ="v">String</span> = <span class="b">something</span> <span class = "a">match </span>
+ 	{
+    		<span class = "a">case </span><span class="b">n: </span><span class ="v">Int</span> => <span class = "s">Number entered " </span> <span class="b">+ n </span>
+    		<span class = "a">case </span><span class="b">s: </span><span class ="v">String</span> => <span class = "s">"String entered "</span><span class="b"> + s </span>
+    		<span class = "a">case </span><span class="b">c: </span><span class ="v">Char</span> => <span class = "s">"Char entered "</span> <span class="b">+ c  </span>
+    		<span class = "a">case </span><span class="b">_ => </span><span class = "s">"Something else"</span>
+  	}
 		</code> </pre>
+  </div>
 	</p>
 </div>
 
@@ -78,15 +100,15 @@ code {
 		<span id ="subTitle"> Read in name from console and print out. </span>
 		
  		<pre><code>
-		// Must import scala.io.StdIn_ because the readLine() method is deprecated.
-		import scala.io.StdIn._
+	// Must import scala.io.StdIn_ because the readLine() method is deprecated.
+	import scala.io.StdIn._
 
-  		def inputName() 
-  		{
-    		print("Enter your name and press enter: ")
-    		val input = readLine();
-    		println("Hello " + input + ".")
-  		}
+  	def inputName() 
+  	{
+    	print("Enter your name and press enter: ")
+    	val input = readLine();
+    	println("Hello " + input + ".")
+  	}
 		</code> </pre>
 	</p>
 </div>
@@ -96,19 +118,19 @@ code {
 		<span id ="subTitle">Simple ParseInt method with Exception Handling Try Catch- takes in String and converts to Int.</span>
 		
  		<pre><code>
-		 def parseInt(s: String): Int = try 
-		{
-    		s.toInt
-  		} catch {
-    		case e: NumberFormatException => -1
-  		}
+	def parseInt(s: String): Int = try 
+	{
+    	   s.toInt
+  	} catch {
+    	case e: NumberFormatException => -1
+  	}
 
-		def convertStringToInt() 
-		{
-   			println("Enter the String to convert: ")
-    		val input = readLine()
-   		 	println(parseInt(input))
-  		}
+	def convertStringToInt() 
+	{
+   		println("Enter the String to convert: ")
+    	val input = readLine()
+   		println(parseInt(input))
+  	}
 		</code> </pre>
 	</p>
 </div>
